@@ -1,0 +1,12 @@
+-name: install git and clone a remote repository
+   hosts: all
+   tasks:
+     -name: install git
+      apt:
+       name: git
+      state: present
+      update_cache: yes
+    -name:clone rmote git repository
+     git:
+       repo: https://github.com/moola120/ansible.git
+       dest: /home/ec-user/file.txt
